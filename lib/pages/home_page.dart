@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:p1_donut_app_cristian_gasca/utils/my_tab.dart';
+import '../tab/donut_tab.dart';
+import '../tab/burgerTab.dart';
+import '../tab/pancakeTab.dart';
+import '../tab/smoithieTab.dart';
+import '../tab/PizzaTab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,8 +46,8 @@ class _HomePageState extends State<HomePage> {
               color: Colors.grey[800],
             ),
           ),
-          actions: [Padding(
-            padding: const EdgeInsets.only(right:15.0),
+          actions: const [Padding(
+            padding:EdgeInsets.only(right:15.0),
             child: Icon(Icons.person),
           )], //Crea un area de gestion de cuentas
         ) ,
@@ -54,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Text("I want to ", style: TextStyle(fontSize: 24.0)),
-                  Text("Eat", style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),
+                  Text("eat", style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),
                   )
                   // fontWeight: FontWeight.bold,
                      ],     //decoration: TextDecoration.underline),),
@@ -65,6 +70,12 @@ class _HomePageState extends State<HomePage> {
           TabBar(tabs: myTabs),
       
           //tab bar view
+          const Expanded(child: TabBarView(children: [
+          DonutTab(),
+          Burgertab(),
+          SmoithieTab(),
+          pancakeTab(),
+          PizzaTab() ] ))
       
           //total del carrito
         ]),
