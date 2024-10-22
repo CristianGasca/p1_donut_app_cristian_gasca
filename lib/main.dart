@@ -13,6 +13,7 @@ class MainApp extends StatelessWidget {
     return  MaterialApp(
       home: const HomePage(),
       theme: ThemeData( tabBarTheme: const TabBarTheme(indicatorColor: Colors.pink),),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

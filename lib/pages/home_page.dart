@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p1_donut_app_cristian_gasca/utils/my_tab.dart';
+import '../utils/my_tab_name.dart';
 import '../tab/donut_tab.dart';
 import '../tab/burgerTab.dart';
 import '../tab/pancakeTab.dart';
@@ -19,17 +20,19 @@ class _HomePageState extends State<HomePage> {
   //donut tab 
   const MyTab(
     iconPath: 'lib/icons/donut.png',
-    ),
+    iname: 'donut', 
+  ),
+   
   // burger tab
   const MyTab(
-    iconPath: 'lib/icons/burger.png' 
+    iconPath: 'lib/icons/burger.png', iname: 'burger', 
   ),
   //smoithie tab
-  const MyTab(iconPath: 'lib/icons/smoothie.png'),
+  const MyTab(iconPath: 'lib/icons/smoothie.png', iname: 'smothie',),
   //pancake tab
-  const MyTab(iconPath: 'lib/icons/pancakes.png'),
+  const MyTab(iconPath: 'lib/icons/pancakes.png', iname: 'pancake',),
   //pizza tab
-  const MyTab(iconPath: 'lib/icons/pizza.png')
+  const MyTab(iconPath: 'lib/icons/pizza.png', iname: 'pizza',)
   ];
 
   @override
@@ -75,7 +78,8 @@ class _HomePageState extends State<HomePage> {
           Burgertab(),
           SmoithieTab(),
           pancakeTab(),
-          PizzaTab() ] ))
+          PizzaTab()
+           ] ))
       
           //total del carrito
         ]),
