@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
+
+class PancakeTile extends StatelessWidget {
   
-  final String donutFlavor;
-  final String donutPrice;
-  final dynamic donutColor; //dybamic pq sera de tipo color 
+  final String pancakeFlavor;
+  final String pancakePrice;
+  final dynamic pancakeColor; //dybamic pq sera de tipo color 
   final String imageName;
 
-  const DonutTile({super.key, required this.donutFlavor, required this.donutPrice, this.donutColor, required this.imageName, required Null Function() onAddToCart});
+  const PancakeTile({super.key, required this.pancakeFlavor, required this.pancakePrice, this.pancakeColor, required this.imageName});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(decoration: BoxDecoration(color: donutColor[50], borderRadius: BorderRadius.circular(24)),
+      child: Container(decoration: BoxDecoration(color: pancakeColor[100], borderRadius: BorderRadius.circular(24)),
       
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [Container(
-          decoration: BoxDecoration(color: donutColor[100], borderRadius: const BorderRadius.only(topRight: Radius.circular(24), bottomLeft: Radius.circular(24))),
+          decoration: BoxDecoration(color: pancakeColor[50], borderRadius: const BorderRadius.only(topRight: Radius.circular(24), bottomLeft: Radius.circular(24))),
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
-          child: Text('\$$donutPrice', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: donutColor[800])),
+          child: Text('\$$pancakePrice', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: pancakeColor[800])),
         )],),
-        //donut picture 
+        //pancake picture 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Image.asset(imageName),
         ),
 
-        //donut flavor text
-        Text(donutFlavor, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        //pancake flavor text
+        Text(pancakeFlavor, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
 
         // texto
-        Text('Dunkins\'s', style: TextStyle(color: Colors.grey[600]),),
+        Text('pancake king', style: TextStyle(color: Colors.grey[600]),),
         //love icon + add button
 
         Padding(

@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
+
+class PizzaTile extends StatelessWidget {
   
-  final String donutFlavor;
-  final String donutPrice;
-  final dynamic donutColor; //dybamic pq sera de tipo color 
+  final String pizzaFlavor;
+  final String pizzaPrice;
+  final dynamic pizzaColor; //dybamic pq sera de tipo color 
   final String imageName;
 
-  const DonutTile({super.key, required this.donutFlavor, required this.donutPrice, this.donutColor, required this.imageName, required Null Function() onAddToCart});
+  const PizzaTile({super.key, required this.pizzaFlavor, required this.pizzaPrice, this.pizzaColor, required this.imageName});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(decoration: BoxDecoration(color: donutColor[50], borderRadius: BorderRadius.circular(24)),
+      child: Container(decoration: BoxDecoration(color: pizzaColor[100], borderRadius: BorderRadius.circular(24)),
       
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [Container(
-          decoration: BoxDecoration(color: donutColor[100], borderRadius: const BorderRadius.only(topRight: Radius.circular(24), bottomLeft: Radius.circular(24))),
+          decoration: BoxDecoration(color: pizzaColor[50], borderRadius: const BorderRadius.only(topRight: Radius.circular(24), bottomLeft: Radius.circular(24))),
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
-          child: Text('\$$donutPrice', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: donutColor[800])),
+          child: Text('\$$pizzaPrice', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: pizzaColor[800])),
         )],),
-        //donut picture 
+        //pizza picture 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Image.asset(imageName),
         ),
 
-        //donut flavor text
-        Text(donutFlavor, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        //pizza flavor text
+        Text(pizzaFlavor, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
 
         // texto
-        Text('Dunkins\'s', style: TextStyle(color: Colors.grey[600]),),
+        Text('pizza king', style: TextStyle(color: Colors.grey[600]),),
         //love icon + add button
 
         Padding(
